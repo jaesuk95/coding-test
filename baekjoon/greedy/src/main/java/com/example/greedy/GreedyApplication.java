@@ -3,7 +3,9 @@ package com.example.greedy;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -16,23 +18,24 @@ public class GreedyApplication {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         System.out.println("N = " + N);
+
         int K = sc.nextInt();
         System.out.println("K = " + K);
 
-        int[] coins = new int[N];
+        int[] changes = new int[N]; // <- you are inserting how many arrays you are listing here
         for (int i = 0; i < N; i++) {
-            coins[i] = sc.nextInt();
+            changes[i] = sc.nextInt();
         }
-        Arrays.sort(coins);
+        Arrays.sort(changes);
 
-        // 그리디 알고리즘 -> 최대한 큰 동전 먼저 사용하기
         int count = 0;
         for (int i = N - 1; i >= 0; i--) {
-            if (coins[i] <= K) {
-                count += (K / coins[i]);
-                K = K % coins[i];
+            if (changes[i] <= K) {
+                count += (K / changes[i]);
+                K = K % changes[i]; // 나머지 구하기
             }
         }
+
         System.out.println("count = " + count);
     }
 
