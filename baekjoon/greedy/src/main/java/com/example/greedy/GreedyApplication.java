@@ -39,5 +39,34 @@ public class GreedyApplication {
         System.out.println("count = " + count);
     }
 
+    // N = Number of coin types
+    // K = total outcome of coins for valuation
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int N = sc.nextInt();
+//        System.out.println("N = " + N);
+//        int K = sc.nextInt();
+//        System.out.println("K = " + K);
+//
+//        int[] changes = new int[N];
+//        for (int i = 0; i < N; i++) {
+//            int each_coin = sc.nextInt();
+//            changes[i] = each_coin;
+//        }
+//
+//        Arrays.sort(changes);
+//
+//        int count = 0;
+//        for (int i = N - 1; i >= 0; i--) {
+//            if (K >= changes[i]) {
+//                count += (K / changes[i]);
+//                K = K % changes[i];
+//            }
+//        }
+//
+//        System.out.println("count = " + count);
+//    }
+
+
 
 }
